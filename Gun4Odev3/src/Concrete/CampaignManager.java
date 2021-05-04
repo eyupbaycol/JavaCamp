@@ -1,4 +1,6 @@
 package Concrete;
 
-public class CampaignManager{
+import Abstract.BaseCampaignManager;
+
+public class CampaignManager extends BaseCampaignManager {
 }
