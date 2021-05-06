@@ -14,7 +14,7 @@ public class Main {
         customer.setFirstName("Eyüp");
         customer.setLastName("Bayçöl");
         customer.setNationalityId("36799335016");
-        customer.setDateOfBirth(Date.valueOf("2018-01-23"));
+        customer.setDateOfBirth(new Date(1997, 02, 9));
         customer.setId(1);
         customerManager.save(customer);
     }

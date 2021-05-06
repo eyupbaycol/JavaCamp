@@ -3,5 +3,5 @@ package Abstract;
 import Entities.Customer;
 
 public interface ICustomerCheckService {
-    boolean CheckIfRealPerson(Customer customer);
+    boolean CheckIfRealPerson(Customer customer) throws Exception;
 }
