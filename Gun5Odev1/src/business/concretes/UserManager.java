@@ -1,12 +1,12 @@
 package business.concretes;
 
 
-import business.abstracts.BaseUserManager;
+import business.abstracts.UserService;
 import core.abstracts.EmailService;
 import dataAccess.abstracts.UserDao;
 import entities.concretes.User;
 
-public class UserManager extends BaseUserManager {
+public class UserManager implements UserService {
     private UserDao userDao;
     private EmailService emailService;
 

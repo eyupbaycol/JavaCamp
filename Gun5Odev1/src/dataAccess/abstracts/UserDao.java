@@ -9,5 +9,4 @@ public interface UserDao {
     String login(User user);
     String logOut(User user);
     boolean getUser(String email);
-    List<User> getUserList();
 }

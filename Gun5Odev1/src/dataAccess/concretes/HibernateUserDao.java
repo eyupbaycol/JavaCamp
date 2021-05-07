@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateUserDao implements UserDao {
+    public static List<User> userList = new ArrayList<User>();
     @Override
     public void addNewUser(User user) {
         System.out.println(user.getFirstName() + " adlı Kullanıcı sisteme başarı ile kaydoldu.");
+        userList.add(user);
     }
 
     @Override
@@ -27,17 +29,8 @@ public class HibernateUserDao implements UserDao {
 
     @Override
     public boolean getUser(String email) {
-        List<User> returnedUsers = getUserList();
-        return returnedUsers.stream().filter(o -> o.geteMail().equals(email)).findFirst().isPresent();
+        return userList.stream().filter(o -> o.geteMail().equals(email)).findFirst().isPresent();
     }
 
-    @Override
-    public List<User> getUserList() {
-        //Şuan elimizde datebase yok ama o yüzden buraya bir liste oluşturup o liste üzeriden kontrol edicem
-        List<User> userList = new ArrayList<User>();
 
-        userList.add(new User(4, "Eyüp", "Bayçöl", "eyup.bycl@gmail.com", "********"));
-        userList.add(new User(5, "Ahmet", "Taş", "ahmet.tas@hotmail.com", "*******"));
-        return userList;
-    }
 }
